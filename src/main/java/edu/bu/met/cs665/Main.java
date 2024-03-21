@@ -8,31 +8,28 @@
 
 package edu.bu.met.cs665;
 
-import edu.bu.met.cs665.example1.Person;
+import edu.bu.met.cs665.example1.IntegrationSystem;
+import edu.bu.met.cs665.example1.LegacySystem;
+import edu.bu.met.cs665.example1.NewSystem;
 
 /**
  * This is the Main class.
  */
 public class Main {
 
-  /**
-   * A main method to run examples.
-   * You may use this method for development purposes as you start building your
-   * assignments/final project.  This could prove convenient to test as you are developing.
-   * However, please note that every assignment/final projects requires JUnit tests.
-   */
-  public static void main(String[] args) {
-    System.out.println("This is a test message from the Main class (Main.java file)");
-  }
 
-  /**
-   * This method performs XYZ and returns String.
-   *
-   * @return String
-   */
-  private String doIt() {
-    Person student = new Person("John", "Doe");
-    return student.getLastName() + ',' + student.getFirstName();
-  }
+    public static void main(String[] args) {
+        LegacySystem legacySystem = new LegacySystem();
+        NewSystem newSystem = new NewSystem();
 
+        // Creating an integration system instance
+        IntegrationSystem integrationSystem = new IntegrationSystem(legacySystem, newSystem);
+
+        // Testing printCustomer method
+        integrationSystem.printCustomer(1);
+        integrationSystem.printCustomer(2);
+        integrationSystem.printCustomer(3);
+
+
+    }
 }

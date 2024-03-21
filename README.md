@@ -1,29 +1,23 @@
 
 | CS-665       | Software Design & Patterns |
 |--------------|----------------------------|
-| Name         | FIRST_NAME LAST_NAME       |
-| Date         | MM/DD/YYYY                 |
-| Course       | Fall / Spring / Summer     |
-| Assignment # |                            |
+| Name         | Shohaib Mallick            |
+| Date         | 03/20/2024                 |
+| Course       | Spring 2024                |
+| Assignment # | 4                          |
 
 # Assignment Overview
-Please add a paragraph or two overviewing the objectives of the assignment.
+This assignment asks you to build a Java program that integrates two customer data systems. It translates requests from a modern system to calls on an older system's API.
 
 # GitHub Repository Link:
-https://github.com/{YOUR_USERNAME}/cs-665-assignment-{ASSIGNMENT_NUMBER}
+https://github.com/shohaibmk/cs-665-assignment-4
 
 # Implementation Description 
 
-
-For each assignment, please answer the following:
-
-- Explain the level of flexibility in your implementation, including how new object types can
-be easily added or removed in the future.
-- Discuss the simplicity and understandability of your implementation, ensuring that it is
-easy for others to read and maintain.
-- Describe how you have avoided duplicated code and why it is important.
-- If applicable, mention any design patterns you have used and explain why they were
-chosen.
+- New object types (customer data fields) can be added by simply extending the Customer class with new attributes. The parsing logic in parseCustomerData would need to be updated to handle the new data format from the legacy system.
+- Using interfaces for the new and legacy systems keeps the core logic decoupled from specific implementations. This makes the code easier to understand and maintain, as changes to one system wouldn't necessarily impact the integration logic.
+- The code avoids duplicated logic by potentially using the Adapter design pattern. The SystemIntegrator class acts as an adapter, translating requests between the two seemingly incompatible systems. This prevents redundant code for handling similar functionalities for different data sources.
+- Depending on the complexity of parsing the legacy data, the Facade design pattern is used. This allows for implementing different parsing strategies based on the data format used by the legacy system. This promotes code flexibility and maintainability.
 
 
 # Maven Commands
